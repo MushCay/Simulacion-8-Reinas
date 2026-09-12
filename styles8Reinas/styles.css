@@ -1,0 +1,213 @@
+body {
+    /* Establece la imagen de fondo utilizando una ruta relativa */
+    background-image: url("../img/fondo.jpg");
+    /* Escalar la imagen para cubrir todo el espacio disponible sin deformar la imagen */
+    background-size: cover;
+    /* Centrar la imagen de fondo en la pantalla */
+    background-position: center;
+    /* Evita que la imagen de fondo se repita*/
+    background-repeat: no-repeat;
+    /* Definir una altura minima*/
+    min-height: 95vh;
+}
+
+h1 {
+    /* Centra el texto del título horizontalmente */
+    text-align: center;
+    /*color del texto en blanco */
+    color: white;
+    /*Tamanio de la fuentes*/
+    font-size: 48px;
+    /*Margen Superior*/
+    margin-top: 20px;
+}
+
+
+.main {
+    /*Color de fondo en rgb*/
+    background-color: rgb(86, 69, 146, 0.5);
+    /*Margen Superior*/
+    margin-top: 20px;
+    /*ancho*/
+    width: 100%;
+    /*Propiedad para alinear elementos de forma horizonta;*/
+    display: flex;
+    /* Apila los elementos encolumna vertical */
+    flex-direction: column;
+    /* Centra el contenido verticalmente */
+    justify-content: center;
+    /* Centra el contenido horizontalmente */
+    align-items: center;
+    /*Separacion interior de la parte inferior*/
+    padding-bottom: 20px;
+    /* Redondea las esquinas del contenedor*/
+    border-radius: 10px;
+}
+
+
+.tablero-container {
+    /* Redondea las esquinas del contenedor*/
+    border-radius: 10px;
+    /*Separacion interior*/
+    padding: 25px;
+    /*Alinear los objetos de forma horizontal*/
+    display: flex;
+    /* Centra los elementos horizontalmente */
+    justify-content: center;
+    /* Centra los elementos verticalmente */
+    align-items: center;
+    /* Color de fondo lila*/
+    background-color: #dec9e9;
+    /* Margen superior*/
+    margin-top: 20px;
+    /* Margen inferior*/
+    margin-bottom: 20px;
+}
+
+
+.contador-container {
+    /*Margen superior*/
+    margin-top: 70px;
+    /* Margen izquierdo*/
+    margin-left: 20px;
+    /* Fondo de color blanco */
+    background-color: white;
+    /* Bordes redondeados*/
+    border-radius: 10px;
+    /* Ancho*/
+    width: 25%;
+    /* Altura */
+    height: auto;
+    /* Saca el elemento del flujo normal y lo posiciona de manera absoluta */
+    position: absolute;
+    /* Lo fija a 20 píxeles del borde superior de la pantalla */
+    top: 20px;
+    /* Lo fija a 20 píxeles del borde izquierdo de la pantalla */
+    left: 20px;
+    /* Utiliza Flexbox para centrar su contenido */
+    display: flex;
+    /* Centra los elementos horizontalmente */
+    justify-content: center;
+    /* Aplica el espaciado interno predeterminado */
+    padding: auto;
+}
+
+.reina-image {
+    /* Ancho de la imagen fijado en 50 píxeles */
+    width: 50px;
+    /* Altura de la imagen fijada en 50 píxeles */
+    height: 50px;
+    /* Margen de 10 píxeles a la derecha para separarla del texto */
+    margin-right: 10px;
+}
+
+table,
+td {
+    /* Redondea los bordes*/
+    border-radius: 5px;
+    /* Borde sólido de 1 píxel de grosor morado*/
+    border: 1px solid #3c096c;
+    /* Intento de separar bordes*/
+    border-collapse: separate;
+    /* Ancho*/
+    width: 450px;
+    /*Aktura*/
+    height: 50px;
+    /* Fondo base morado */
+    background-color: #3c096c;
+}
+
+/* Selector para crear el patrón de ajedrez (casillas de un tono muy oscuro) */
+/* Selecciona celdas pares en filas pares, y celdas impares en filas impares */
+tr:nth-child(even) td:nth-child(even),
+tr:nth-child(odd) td:nth-child(odd) {
+    /* Color morado de fondo*/
+    background-color: #10002b;
+}
+
+/* Selector para crear el patrón de ajedrez (casillas de un tono claro) */
+/* Selecciona celdas pares en filas impares, y celdas impares en filas pares */
+tr:nth-child(odd) td:nth-child(even),
+tr:nth-child(even) td:nth-child(odd) {
+    /* Color lila claro de fondo */
+    background-color: #e0aaff;
+}
+
+p #contador {
+    /* Tamaño del texto*/
+    font-size: 20px;
+    /* Hace el texto en negritas */
+    font-weight: bold;
+    /*Margen Superior*/
+    margin-top: 10px;
+}
+
+.ganador-container {
+    /* Posiciona la ventana emergente fija */
+    position: fixed;
+    /* Alinea al borde superior */
+    top: 0;
+    /* Alinea al borde izquierdo */
+    left: 0;
+    /* Ocupa el 100% del ancho de la pantalla */
+    width: 100%;
+    /* Ocupa el 100% del alto de la pantalla */
+    height: 100%;
+    /* Fondo negro translúcido */
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Oculta la ventana emergente por defecto */
+    display: none;
+    /* Centra horizontalmente la caja de mensaje interna */
+    justify-content: center;
+    /* Centra verticalmente la caja de mensaje interna */
+    align-items: center;
+    /* Capa muy alta para asegurar que quede por encima de todo el contenido */
+    z-index: 9999;
+}
+
+#mensaje-ganador {
+    /* Ancho */
+    width: 500px;
+    /* Alto*/
+    height: 300px;
+    /* Bordes redondeados*/
+    border-radius: 10px;
+    /* Color de fondo lila */
+    background-color: #d1c2e0;
+    /* Fuente*/
+    font-family: Arial, sans-serif;
+    /* Distribución con Flexbox */
+    display: flex;
+    /* Ordena el título, mensaje y botón en una columna vertical */
+    flex-direction: column;
+    /* Centra los elementos verticalmente */
+    justify-content: center;
+    /* Centra los elementos horizontalmente */
+    align-items: center;
+    /* Color morado oscuro para los textos internsos*/
+    color: #3c096c;
+    /* Centra la alineación del texto */
+    text-align: center;
+    /* Tamaño de fuente */
+    font-size: 20px;
+}
+
+
+.boton-reiniciar {
+    /* Color de fondo morado*/
+    background-color: #3c096c;
+    /* Color del texto del botón*/
+    color: white;
+    /* Remueve el borde predeterminado*/
+    border: none;
+    /* Espaciado interno de 10px arriba/abajo y 20px a los lados */
+    padding: 10px 20px;
+    /* Bordes redondeados*/
+    border-radius: 5px;
+    /* Cambia el cursor al ícono de mano al pasar por encima */
+    cursor: pointer;
+    /* Tamaño del texto*/
+    font-size: 16px;
+    /* Separa el botón del texto superior */
+    margin-top: 20px;
+}
