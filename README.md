@@ -1,5 +1,10 @@
 # Problema de las 8 Reinas 
 
+## Creador
+<a href="https://github.com/MushCay"> @MushCay</a>
+
+## Descripcion
+
 Aplicación web interactiva con un tablero donde el usuario puede colocar las piezas en distintos ordenes hasta encontrar la solución. 
 Proyecto perteneciente a la materia de simulación.
 
